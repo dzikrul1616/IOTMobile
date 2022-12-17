@@ -61,8 +61,10 @@ class _HomeAddViewState extends State<HomeAddView> {
                 ),
                 IconButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LampView()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EditDeviceView()));
                     },
                     icon: Icon(Icons.settings)),
               ],

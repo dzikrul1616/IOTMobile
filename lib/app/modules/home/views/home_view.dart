@@ -37,9 +37,6 @@ class _convexbottombarState extends State<convexbottombar> {
     });
   }
 
-  // int _page = 1;
-  // GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
