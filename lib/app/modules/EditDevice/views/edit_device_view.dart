@@ -43,6 +43,7 @@ class EditDeviceView extends GetView<EditDeviceController> {
                   ],
                 ),
                 IconButton(
+                  //klik
                     onPressed: () {
                       Navigator.push(
                           context,

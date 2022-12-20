@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "UAS APP",
+      // halaman pertama
       initialRoute: Routes.LOGIN,
       getPages: AppPages.routes,
     );

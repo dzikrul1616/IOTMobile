@@ -8,6 +8,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:uas_app/app/modules/home/views/home_view.dart';
 
+// bawaan package
 GoogleSignIn _googleSignIn = GoogleSignIn(
   scopes: [
     'email',
@@ -15,6 +16,7 @@ GoogleSignIn _googleSignIn = GoogleSignIn(
   ],
 );
 
+//  controll tombol login pakai google
 class LoginGoState extends StatefulWidget {
   const LoginGoState({Key? key}) : super(key: key);
   @override
@@ -30,10 +32,12 @@ class _loginGoState extends State<LoginGoState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //
       body: FutureBuilder(
           future: _initilizeFirebase(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
+              // diarahkan tampilan
               return LoginView();
             }
             return const Center(
@@ -44,6 +48,7 @@ class _loginGoState extends State<LoginGoState> {
   }
 }
 
+// tampilan login
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
   @override
@@ -53,6 +58,7 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   GoogleSignInAccount? _currentUser;
   // bool _isloading = false;
+// controller ke 2 login dari package
   Future<void> _handleSignIn(context) async {
     final googleSignIn = GoogleSignIn();
     final googleAccount = await googleSignIn.signIn();
@@ -77,6 +83,7 @@ class _LoginViewState extends State<LoginView> {
   }
 
   @override
+  // button sama
   void initState() {
     _googleSignIn.onCurrentUserChanged.listen((event) {
       setState(() {
@@ -106,9 +113,8 @@ class _LoginViewState extends State<LoginView> {
     return user;
   }
 
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
   @override
+  //tampilan dimulai darsini
   Widget build(BuildContext context) {
     return Scaffold(
         body: _currentUser == null
@@ -121,71 +127,29 @@ class _LoginViewState extends State<LoginView> {
                         const SizedBox(
                           height: 120.0,
                         ),
+                        // teks biasa
                         Text(
-                          "ONII CHANNN (◍´ᴗ`◍)",
+                          "IOT CONTROL",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 28,
                           ),
                         ),
+                        //spasi
                         const SizedBox(
                           height: 20.0,
                         ),
-                        Image.asset('assets/anime.png'),
+                        //ngambil dari assets
+                        Image.asset('assets/lampu.png'),
                         const SizedBox(
                           height: 20.0,
                         ),
-                        // TextFormField(
-                        //   // initialValue: 'ex : admin@gmail.com',
-                        //   // maxLength: 18,
-                        //   controller: emailController,
-                        //   decoration: const InputDecoration(
-                        //     labelText: 'Email',
-                        //     labelStyle: TextStyle(
-                        //       color: Colors.blueGrey,
-                        //     ),
-                        //     prefixIcon: Icon(
-                        //       Icons.email,
-                        //     ),
-                        //     enabledBorder: UnderlineInputBorder(
-                        //       borderSide: BorderSide(
-                        //         color: Colors.blueGrey,
-                        //       ),
-                        //     ),
-                        //     // helperText: 'Enter your email address',
-                        //   ),
-                        //   onChanged: (value) {},
-                        // ),
-                        // const SizedBox(
-                        //   height: 22.0,
-                        // ),
-                        // TextFormField(
-                        //   // initialValue: '123456',
-                        //   // maxLength: 20,
-                        //   controller: passwordController,
-                        //   obscureText: true,
-                        //   decoration: const InputDecoration(
-                        //     labelText: 'Password',
-                        //     labelStyle: TextStyle(
-                        //       color: Colors.blueGrey,
-                        //     ),
-                        //     prefixIcon: Icon(
-                        //       Icons.lock,
-                        //     ),
-                        //     enabledBorder: UnderlineInputBorder(
-                        //       borderSide: BorderSide(
-                        //         color: Colors.blueGrey,
-                        //       ),
-                        //     ),
-                        //     // helperText: 'Enter your password',
-                        //   ),
-                        //   onChanged: (value) {},
-                        // ),
                         const SizedBox(
                           height: 15.0,
                         ),
+                        // teks
                         Text(
-                          'Sini login ONIICHANN QYAAAA',
+                          'Sini login pakai google :',
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
@@ -194,6 +158,7 @@ class _LoginViewState extends State<LoginView> {
                         const SizedBox(
                           height: 30.0,
                         ),
+                        //tombol
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(),
                           onPressed: () => _handleSignIn(context),
@@ -204,6 +169,7 @@ class _LoginViewState extends State<LoginView> {
                                 child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
+                                // bukan teks tapi gambar google
                                 Image.asset('assets/Vector.png'),
                                 Text(
                                   "Login With Google",

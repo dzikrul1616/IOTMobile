@@ -15,6 +15,7 @@ class HomeAddView extends StatefulWidget {
 }
 
 class _HomeAddViewState extends State<HomeAddView> {
+  // controll tombol on off
   bool switch1IsOn = false;
   bool switch2IsOn = false;
   bool switch3IsOn = false;
@@ -50,13 +51,7 @@ class _HomeAddViewState extends State<HomeAddView> {
                     const SizedBox(
                       width: 120.0,
                     ),
-                    IconButton(
-                        onPressed: () {
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (context) => ProfilView()));
-                        },
-                        icon: Icon(Icons.add)),
+                    IconButton(onPressed: () {}, icon: Icon(Icons.add)),
                   ],
                 ),
                 IconButton(
@@ -70,6 +65,7 @@ class _HomeAddViewState extends State<HomeAddView> {
               ],
             ),
           ),
+          //spasi
           const SizedBox(
             height: 30.0,
           ),
@@ -125,6 +121,7 @@ class _HomeAddViewState extends State<HomeAddView> {
                                 fontStyle: FontStyle.italic,
                               ),
                             ),
+                            // tombol on off
                             Switch(
                               value: switch1IsOn,
                               onChanged: (value) {
@@ -347,6 +344,6 @@ class _HomeAddViewState extends State<HomeAddView> {
 //   const HomeAddView({Key? key}) : super(key: key);
 //   @override
 //   Widget build(BuildContext context) {
-    
+
 //   }
 // }

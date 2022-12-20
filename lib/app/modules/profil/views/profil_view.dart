@@ -17,6 +17,7 @@ GoogleSignIn _googleSignIn = GoogleSignIn(
 );
 
 class ProfilView extends GetView<ProfilController> {
+  //buat manggil nama email
   final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {

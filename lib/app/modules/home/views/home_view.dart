@@ -14,6 +14,7 @@ class convexbottombar extends StatefulWidget {
 }
 
 class _convexbottombarState extends State<convexbottombar> {
+  // navigasi footer
   final _pgno = [HomeAddView(), ProfilView()];
 
   int _pilihtabbar = 0;
@@ -21,6 +22,7 @@ class _convexbottombarState extends State<convexbottombar> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static const List<Widget> _widgetOptions = <Widget>[
+    // nama
     Text(
       'Home',
       style: optionStyle,
@@ -30,7 +32,7 @@ class _convexbottombarState extends State<convexbottombar> {
       style: optionStyle,
     ),
   ];
-
+// fungsi ganti page
   void _changetabbar(int index) {
     setState(() {
       _pilihtabbar = index;
@@ -40,6 +42,7 @@ class _convexbottombarState extends State<convexbottombar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //package 
       body: _pgno[_pilihtabbar],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(

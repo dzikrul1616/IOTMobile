@@ -95,6 +95,7 @@ class _LampViewState extends State<LampView> {
                 const SizedBox(
                   height: 30.0,
                 ),
+                //  center tengah
                 Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
